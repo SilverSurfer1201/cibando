@@ -8,19 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cibando';
-  percorso = "../assets/images/carousel-";
-  images = [
-    {id:1, label: 'Spaghetti al pomodoro'},
-    {id:2, label: 'Tagliata di manzo'},
-    {id:3, label: 'Tiramisù classico'}
-  ];
+
 
   allievi = ['Davide','Francesco','Maria Sole','Gioele'];
   allieviCompleta = [
     {id:1, nome: 'Davide', cognome: 'Rossi'},
     {id:2, nome: 'Giuseppe', cognome: 'Gialli'},
-    {id:3, nome: 'Pisello', cognome: 'Palle'},
-    {id:4, nome: 'Cocco', cognome: 'Balle'},
   ]
+
 
 }
