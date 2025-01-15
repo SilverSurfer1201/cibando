@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../../../models/recipes.model';
 
 @Component({
@@ -9,10 +9,11 @@ import { Recipe } from '../../../models/recipes.model';
   styleUrl: './recipe-card.component.scss'
 })
 export class RecipeCardComponent {
- @Input() recipes : Recipe[] | undefined
+ @Input() recipes: Recipe[] | undefined;
+ @Output() messaggio = new EventEmitter();
+
+ inviaTitolo(titolo: string) {
+  this.messaggio.emit(titolo);
+ }
 
 }
-
-//classe figlio questa, dove creo una variabile che contiene un array di ricette.
-//abbiamo fatto una variabile di tipo input che e fatta apposta per ircevere dati da qualcun altro,
-//ora il padre può vedere la variabile

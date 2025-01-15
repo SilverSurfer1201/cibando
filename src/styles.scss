@@ -19,8 +19,23 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: $secondary-color;
-  border-color: $secondary-color;
+  background-color: $secondary-color1;
+  border-color: $secondary-color1;
 }
 
+.is.danger {
+  color: #ff0000;
+  font-size: small;
+  position: relative;
+  top: -10px;
+}
 
+//da vedere bene
+
+// .ng-valid {
+//   border: 2px solid green!important;
+// }
+
+// .ng-invalid {
+//   border: 2px solid red!important;
+// }
