@@ -14,6 +14,8 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PasswordModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

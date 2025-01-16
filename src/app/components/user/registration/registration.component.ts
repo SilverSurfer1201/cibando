@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { Password } from 'primeng/password';
+import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +12,8 @@ import { Password } from 'primeng/password';
   styleUrl: './registration.component.scss'
 })
 export class RegistrationComponent {
-
+  private router = inject(Router);
+  private userService = inject(UserService);
   form = new FormGroup({
     name: new FormControl('',[Validators.required]),
     email: new FormControl('', [Validators.email, Validators.email]),
@@ -19,8 +22,15 @@ export class RegistrationComponent {
     accetto: new FormControl(false, Validators.requiredTrue)
   })
 
+
   onSubmit(){
     console.log(this.form.value)
+    const dati = {
+      nome: this.form.controls.name.value,
+      email: this.form.controls.email.value
+    }
+    this.userService.datiUtente.next(dati);
+    this.router.navigateByUrl('home');
   }
 
   scriviInNome(e){
@@ -35,5 +45,7 @@ export class RegistrationComponent {
       this.isEqual = false;
     }
   }
+
+
 
 }

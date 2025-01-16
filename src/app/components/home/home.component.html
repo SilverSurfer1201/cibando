@@ -11,3 +11,40 @@
 <h2>Ultime ricette</h2>
 <app-recipe-card [recipes]="ricette"></app-recipe-card>
 
+<!-- <button (click)="openModal(modaleUno)">Elimina Prodotto</button>
+<button (click)="openModal(modaleRegistrazione)">Registrazione</button> -->
+
+<!-- MODALE 1(specificare azione modale) -->
+
+<ng-template #modaleUno let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Elimna Prodotto</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>Sei sicuro di voler eliminare il prodotto</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.dismiss()" ngbAutofocus>ANNULLA</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close()">ELIMINA</button>
+	</div>
+</ng-template>
+
+<!-- MODALE 2(specificare azione modale) -->
+
+<ng-template #modaleRegistrazione let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Registrazione con Successo</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<h3>Ecco i tuoi dati</h3>
+    <ul>
+      <li>Nome:{{this.datiRegistrazione ['nome']}}</li>
+      <li>Email:{{this.datiRegistrazione ['email']}}</li>
+    </ul>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Chiudi</button>
+	</div>
+</ng-template>
